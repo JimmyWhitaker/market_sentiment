@@ -1,0 +1,32 @@
+{
+  "pipeline": {
+    "name": "train_model"
+  },
+  "description": "Train a logistic regression model for sentiment analysis.",
+  "input": {
+    "cross": [
+      {
+        "pfs": {
+          "repo": "dataset",
+          "glob": "/"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "sentiment_words",
+          "glob": "/*"
+        }
+      }
+    ]
+  },
+  "transform": {
+    "cmd": [
+      "python", "train.py",
+      "--data-file", "/pfs/dataset/FPB_dataset.txt",
+      "--sentiment-words-file", "/pfs/sentiment_words/LoughranMcDonald_SentimentWordLists_2018.csv",
+      "--output-dir", "/pfs/out",
+      "-v"
+    ],
+    "image": "jimmywhitaker/market_sentiment:dev0.2"
+  }
+}

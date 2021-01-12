@@ -1,0 +1,21 @@
+{
+  "pipeline": {
+    "name": "dataset"
+  },
+  "description": "Create an FPB formatted dataset for labeled text data.",
+  "input": {
+    "pfs": {
+      "repo": "labeled_data",
+      "glob": "/"
+    }
+  },
+  "transform": {
+    "cmd": [
+      "python", "completions-dataset.py",
+      "--completions-dir", "/pfs/labeled_data/",
+      "--output-file", "/pfs/out/FPB_dataset.txt",
+      "-v"
+    ],
+    "image": "jimmywhitaker/market_sentiment:dev0.2"
+  }
+}
