@@ -1,4 +1,4 @@
-name: CI and Auto-Pachyderm Pipeline Update
+name: CI and Auto-Pachyderm Pipeline Update 
 
 # Controls when the action will run. 
 on:
