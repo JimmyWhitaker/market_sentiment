@@ -42,5 +42,5 @@ jobs:
       
       # Update Pachyderm Pipelines
       - name: pachyderm-update-pipelines
-        uses: ./pachyderm-github-action
+        uses: ./pachyderm/pachyderm-github-action
         id: pup

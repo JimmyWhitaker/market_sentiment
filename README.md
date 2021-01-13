@@ -11,10 +11,11 @@ TODO
 ### market_sentiment
 The main code of the project. This includes the python files needed to load data, etc. 
 
-### pachyderm
+### Pachyderm
 This directory holds all the pachyderm pipelines. These pipelines define the code that will be run on our data in our Pachyderm cluster. Once deployed, they will automatically process any data changes, such as, when new data is labeled, it will automatically create a new dataset and train a model when that dataset is ready. 
 
-### pachyderm-github-action
+#### **pachyderm-github-action**
+
 The Pachyderm GitHub Action is used to deploy our pipelines when code is pushed to our repository. It handles the building of the Docker container, pushing it to our Docker registry, and updates our pipelines with the new version of this container. 
 
 ### tests

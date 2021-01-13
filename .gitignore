@@ -87,5 +87,4 @@ ENV/
 
 # project specifc
 output/
-.github/workflows/push.yaml
 .DS_Store
