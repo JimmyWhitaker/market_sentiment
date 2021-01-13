@@ -1,4 +1,10 @@
 # Market Sentiment Example
+
+<p align="center">
+	<img src='images/market_sentiment.png' width='800' title='Overview Diagram'>
+</p>
+
+
 The purpose of this example is to illustrate how the two, independent yet symbiotic loops in the [machine learning loop](https://jimmymwhitaker.medium.com/completing-the-machine-learning-loop-e03c784eaab4) can work together practically. The code loop is managed by git+unittest+GitHub Actions, while the data loop and the data+code interactiona are managed by Pachyderm. 
 
 The original technique is a [sentiment analysis classifier](https://github.com/yuki678/financial-phrase-bert/blob/master/SA_Model_Comparison_Finphrase.ipynb) that uses the [Financial Phrase Bank Dataset](https://www.researchgate.net/profile/Pekka_Malo/publication/251231364_FinancialPhraseBank-v10). In this example, we use a reduced version of this blog post and dataset for simplicity and transparency to show the interactions more than the techniques themselves. 
