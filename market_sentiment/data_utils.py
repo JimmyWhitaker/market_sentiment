@@ -57,7 +57,5 @@ def df_to_ls(df):
             ]
         })
 
+    print('\n'.join(map(json.dumps, ls_dataset)))
     return '\n'.join(map(json.dumps, ls_dataset))
-
-    # Output in JSONL format
-    # return ls_df.to_json(orient='records', lines=True)
