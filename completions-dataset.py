@@ -33,32 +33,5 @@ def main():
                     label = completions_data['completions'][-1]['result'][0]['value']['choices'][0].lower()
                     dataset_file.write("{example}@{label}\n".format(example=example, label=label))
 
-
-    # df = pd.read_json(args.source)
-    # for index, row in df.iterrows():
-    #     with open(os.path.join(args.output_dir,id), 'w') as f:
-    #         json.dumps({
-    #         "data": {
-    #             "text": row["sentence"]
-    #         },
-    #         "predictions": [
-    #             {
-    #                 "result": [
-    #                     {
-    #                         "value": {
-    #                             "choices": [
-    #                                 row["label"].capitalize()
-    #                             ]
-    #                         },
-    #                         "from_name": "sentiment",
-    #                         "to_name": "text",
-    #                         "type": "choices"
-    #                     }],
-    #                 "score": 1.0
-    #             }
-    #         ]
-    #     },f)
-
-
 if __name__ == "__main__":
     main()

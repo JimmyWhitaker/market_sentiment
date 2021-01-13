@@ -21,10 +21,10 @@ test-ls-ingest:
 	$(PACHCTL) create repo raw_data
 	$(PACHCTL) create repo labeled_data
 	$(PACHCTL) create branch labeled_data@master
-	$(PACHCTL) put file raw_data@master:/FinancialPhraseBank.jsonl -f output/raw100_FinancialPhraseBank.jsonl --split json --target-file-datums 1 --overwrite
-	$(PACHCTL) put file labeled_data@master:/ -r -f output/labeled-data/
+	$(PACHCTL) put file raw_data@master:/FinancialPhraseBank.jsonl -f output/raw30_FinancialPhraseBank.jsonl --split json --target-file-datums 1 --overwrite
+	$(PACHCTL) put file labeled_data@master:/ -r -f output/completions/
 	cp output/source.json label-studio-project/source.json
-	$(PACHCTL) create pipeline -f pachyderm/create_dataset.json
+	$(PACHCTL) create pipeline -f pachyderm/dataset.json
 
 	$(PACHCTL) create repo sentiment_words
 	$(PACHCTL) put file sentiment_words@master:/LoughranMcDonald_SentimentWordLists_2018.csv -f resources/LoughranMcDonald_SentimentWordLists_2018.csv
@@ -32,7 +32,7 @@ test-ls-ingest:
 
 delete:
 	$(PACHCTL) delete pipeline train_model
-	$(PACHCTL) delete repo dataset
+	$(PACHCTL) delete pipeline dataset
 	$(PACHCTL) delete repo sentiment_words
 	$(PACHCTL) delete repo raw_data
 	$(PACHCTL) delete repo labeled_data
