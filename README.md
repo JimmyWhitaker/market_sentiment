@@ -68,8 +68,8 @@ Project configuration for a sentiment analysis in Label Studio using Pachyderm's
 ## TODO and Known Issues
 
 * There's currently some lag in the s3 gateway communications (likely because test cluster is very small). More investigation needed on this. 
-* Add data exploration visualizations
-* Makefile for common functions and deployments (integration and prod testing)
+* Bug where changing label modifies the wrong file in s3
+* Makefile for integration and prod testing
 * Create staging branch for deployment that can be migrated into production. 
 * Add more unit tests
 * Add data tests

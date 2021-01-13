@@ -32,6 +32,6 @@ delete:
 	$(PACHCTL) delete repo sentiment_words
 	$(PACHCTL) delete repo raw_data
 	$(PACHCTL) delete repo labeled_data
-	rm -r label-studio-project/source.json label-studio-project/target.json label-studio-project/completions/* label-studio-project/tabs.json 
+	rm -rf label-studio-project/source.json label-studio-project/target.json label-studio-project/completions/* label-studio-project/tabs.json 
 
 clean: delete

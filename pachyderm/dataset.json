@@ -16,6 +16,6 @@
       "--output-file", "/pfs/out/FPB_dataset.txt",
       "-v"
     ],
-    "image": "jimmywhitaker/market_sentiment:dev0.2"
+    "image": "jimmywhitaker/market_sentiment:dev0.3"
   }
 }
