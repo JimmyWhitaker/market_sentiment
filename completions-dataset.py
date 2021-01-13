@@ -29,7 +29,8 @@ def main():
                 with open(os.path.join(dirpath, f)) as completions_file:
                     completions_data = json.load(completions_file)
                     example = completions_data['data']['text']
-                    label = completions_data['completions'][0]['result'][0]['value']['choices'][0].lower()
+                    # Assumption: last completion is newest
+                    label = completions_data['completions'][-1]['result'][0]['value']['choices'][0].lower()
                     dataset_file.write("{example}@{label}\n".format(example=example, label=label))
 
 
