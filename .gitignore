@@ -88,7 +88,7 @@ ENV/
 # project specifc
 output/
 .DS_Store
-data/
+data/FinancialPhraseBank-v1.0/
 resources/LoughranMcDonald_MasterDictionary_2018.csv
 label-studio-project/completions/
 label-studio-project/tabs.json

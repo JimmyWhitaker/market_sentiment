@@ -1,0 +1,1 @@
+{"data": {"text": "Net sales totaled EUR 93.6 mn , up from EUR 93.2 mn in the corresponding period in 2005 ."}, "predictions": [{"result": [{"value": {"choices": ["Positive"]}, "from_name": "sentiment", "to_name": "text", "type": "choices"}], "score": 1.0}]}

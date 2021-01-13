@@ -3,28 +3,10 @@ The purpose of this example is to illustrate how the two, independent yet symbio
 
 The original technique is a [sentiment analysis classifier](https://github.com/yuki678/financial-phrase-bert/blob/master/SA_Model_Comparison_Finphrase.ipynb) that uses the [Financial Phrase Bank Dataset](https://www.researchgate.net/profile/Pekka_Malo/publication/251231364_FinancialPhraseBank-v10). In this example, we use a reduced version of this blog post and dataset for simplicity and transparency to show the interactions more than the techniques themselves. 
 
-## Repository Structure
-
-### Data-tests
-TODO
-
-### market_sentiment
-The main code of the project. This includes the python files needed to load data, etc. 
-
-### Pachyderm
-This directory holds all the pachyderm pipelines. These pipelines define the code that will be run on our data in our Pachyderm cluster. Once deployed, they will automatically process any data changes, such as, when new data is labeled, it will automatically create a new dataset and train a model when that dataset is ready. 
-
-#### **pachyderm-github-action**
-
-The Pachyderm GitHub Action is used to deploy our pipelines when code is pushed to our repository. It handles the building of the Docker container, pushing it to our Docker registry, and updates our pipelines with the new version of this container. 
-
-### tests
-Unit tests for our code that will be run before building our Docker container. 
-
-### label-studio-project
-Project configuration for a sentiment analysis in Label Studio using Pachyderm's s3 gateway as the backend to add versioning to the labeling environment. Data is read from Pachyderm and written back to Pachyderm, which adds versioning automatically. 
 
 ## Running the example
+The easiest way to run this example is to use the [Makefile](./Makefile) once the cluster is configured (steps below).
+
 
 ### Setup Pachyderm, S3 gateway, and Label Studio
 1. Start a pachyderm cluster - get the endpoint address (if using hub, just look at the address where the dash is being served or if minikube, run `minikube ip`)
@@ -62,9 +44,30 @@ pachctl auth get-auth-token --ttl "624h" | grep Token | awk '{print $2}'
 3. Create Pachyderm token, [DockerHub username, and DockerHub token](https://docs.docker.com/docker-hub/access-tokens/) secrets in GitHub (see [Managing Access Tokens](https://docs.docker.com/docker-hub/access-tokens/)). See our [GitHub Actions Example](https://github.com/pachyderm/pachyderm-gha#running-this-example) for details. 
 4. Once these tokens are in place, the pipelines will be pushed each time code is merged to the master branch.
 
+## Repository Structure
 
-## TODO
+### Data-tests
+TODO
 
+### market_sentiment
+The main code of the project. This includes the python files needed to load data, etc. 
+
+### Pachyderm
+This directory holds all the pachyderm pipelines. These pipelines define the code that will be run on our data in our Pachyderm cluster. Once deployed, they will automatically process any data changes, such as, when new data is labeled, it will automatically create a new dataset and train a model when that dataset is ready. 
+
+#### **pachyderm-github-action**
+
+The Pachyderm GitHub Action is used to deploy our pipelines when code is pushed to our repository. It handles the building of the Docker container, pushing it to our Docker registry, and updates our pipelines with the new version of this container. 
+
+### tests
+Unit tests for our code that will be run before building our Docker container. 
+
+### label-studio-project
+Project configuration for a sentiment analysis in Label Studio using Pachyderm's s3 gateway as the backend to add versioning to the labeling environment. Data is read from Pachyderm and written back to Pachyderm, which adds versioning automatically. 
+
+## TODO and Known Issues
+
+* There's currently some lag in the s3 gateway communications (likely because test cluster is very small). More investigation needed on this. 
 * Add data exploration visualizations
 * Makefile for common functions and deployments (integration and prod testing)
 * Create staging branch for deployment that can be migrated into production. 
