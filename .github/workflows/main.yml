@@ -42,7 +42,7 @@ jobs:
       PACHYDERM_CLUSTER_URL: https://hub-c0-muzo11nd02.clusters.pachyderm.io:31400
       PACHYDERM_TOKEN: ${{ secrets.PACHYDERM_TOKEN }}
       DOCKER_IMAGE_NAME: jimmywhitaker/market_sentiment
-      PACHYDERM_PIPELINE_FILES: pachyderm/dataset.json pachyderm/train_model.json
+      PACHYDERM_PIPELINE_FILES: pachyderm/dataset.json pachyderm/train_model.json pachyderm/visualizations.json
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

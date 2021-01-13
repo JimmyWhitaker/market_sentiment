@@ -88,3 +88,9 @@ ENV/
 # project specifc
 output/
 .DS_Store
+data/
+resources/LoughranMcDonald_MasterDictionary_2018.csv
+label-studio-project/completions/
+label-studio-project/tabs.json
+label-studio-project/target.json
+label-studio-project/source.json

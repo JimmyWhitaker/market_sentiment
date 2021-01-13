@@ -15,9 +15,10 @@ def visualize_frequent_words(corpus, stop_words):
             x.append(word)
             y.append(count)
 
-    plt.figure(figsize=(15, 7))
+    fig = plt.figure(figsize=(15, 7))
     sns.barplot(x=y, y=x)
-    plt.show()
+    return fig
+
 
 # Generate Word Cloud image
 def generate_word_cloud(corpus, stop_words):
@@ -36,7 +37,7 @@ def generate_word_cloud(corpus, stop_words):
     # the matplotlib way:
     plt.imshow(wordcloud, interpolation="bilinear")
     plt.axis("off")
-    plt.show()
 
     # Generate a word cloud image
     wordcloud = WordCloud(stopwords=stop_words, background_color="white").generate(text)
+    return wordcloud
